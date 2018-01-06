@@ -1,7 +1,7 @@
 # geometrism
 
 <p align="center">
-  <img src=""/>
+  <img src="https://user-images.githubusercontent.com/29079048/34642444-bee3cec0-f2d8-11e7-8bd0-54cf39f83f38.png"/>
 </p>
 
 Geometrism is a library of sequences for use with TidalCycles. The sequences are generally appropriated from the Online Encyclopedia of Integer Sequences (oeis). They are currently focused around 2 main geometry themes:
