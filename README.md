@@ -1,5 +1,9 @@
 # geometrism
 
+<p align="center">
+  <img src=""/>
+</p>
+
 Geometrism is a library of sequences for use with TidalCycles. The sequences are generally appropriated from the Online Encyclopedia of Integer Sequences (oeis). They are currently focused around 2 main geometry themes:
 
 - FIBONACCI numbers, including various related sequences such as tribonacci numbers, Pisano sequences, etc.
