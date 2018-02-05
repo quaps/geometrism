@@ -14,11 +14,15 @@ Geometrism is a library of sequences for use with TidalCycles, a mini-language o
 
 Each module has 3 different expressions, followed by a corresponding A, B, or C like so:
 fibonacciA
+
 fibonacciB
+
 fibonacciC
 
 'A' expressions are sequences ranging from 20 - 20K
+
 'B' expressions are comma separated sequences
+
 'C' expressions are sequences ranging from 1-10, & inserted inside the spread function in TidalCycles (< >) 
 
 An example pattern using the Geometrism library is expressed like so:
