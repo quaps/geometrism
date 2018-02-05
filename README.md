@@ -4,23 +4,26 @@
   <img src="https://user-images.githubusercontent.com/29079048/34967785-d45e2846-fa2a-11e7-8d49-e831c8faf5f0.png"/>
 </p>
 
-Geometrism is a library of sequences for use with TidalCycles. The sequences are generally appropriated from the Online Encyclopedia of Integer Sequences (oeis). They are currently focused around 2 main geometry themes:
+Geometrism is a library of sequences for use with TidalCycles, a mini-language of Haskell. The sequences are generally appropriated from the Online Encyclopedia of Integer Sequences (oeis). They are currently focused around 3 main geometry themes:
 
-- FIBONACCI numbers, including various related sequences such as tribonacci numbers, Pisano sequences, etc.
+- FIBONACCI numbers. Including various related sequences such as tribonacci numbers, Pisano sequences, etc.
 
-- LATTICES, often coordinate sequences of polyhedra or chemical structures (ie silicon)
+- LATTICES. Often coordinate sequences of polyhedra or chemical structures (ie silicon)
 
-Many of these sequences are cut off near 20K; this is because the library was initially used for frequency mappings with the included SuperCollider synths (human hearing rarely exceeds 20K hertz).
+- FRACTALS
+
+Each module has 3 different expressions, followed by a corresponding A, B, or C like so:
+fibonacciA
+fibonacciB
+fibonacciC
+
+'A' expressions are sequences ranging from 20 - 20K
+'B' expressions are comma separated sequences
+'C' expressions are sequences ranging from 1-10, & inserted inside the spread function in TidalCycles (< >) 
 
 An example pattern using the Geometrism library is expressed like so:
-d1 $ f tetranacci # s "S"
+d1 $ density fibonacciC $ f tetranacci # s "S"
 
-where 'f' is frequency, 'S' is a sine wave synth, & 'tetranacci' runs the pattern '1 5 26 10 312 130 342 20 78 1560 120 130 84 1710 312 40 4912 390 6858 1560 4446 120 12166 260 1560 420 234 1710 280 1560 61568 80 1560 24560 17784 390 1368 34290 1092 1560 240 22230 162800 120 312 60830 103822 520'
+where 'f' is frequency, 'S' is a sine wave synth, & 'tetranacci' runs the pattern '20 20 23 21 58 35 61 22 29 211 34 35 30 229 58 24 622 67 861 211 565 34 1512 51 211 71 48 229 54 211 7575 29 211 3034 2202 67 187 4228 153 211 49 2748 20000 34 58 7485 12761 83'
 
-Note that the above sequence exceeds 20K. Sequences such as these can be scaled by declaring a function
 
-linlin x y a b = (+ a) . (* ((b-a)/(y-x))) . (subtract x)
-
-Where x & y are the low & high ranges of the sequence, & a & b are the desirable scaled ranges. This allows the user to do something like this:
-
-d1 $ linlin 1 162800 100 200 tetranacci # s "S"
